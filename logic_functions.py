@@ -21,9 +21,9 @@ def get_fresh_board():
 
 
 
-def get_next_board(squaresB, i, x_is_next):
+def get_next_board(squares, i, x_is_next):
     if x_is_next:
-        squaresB[i] = "X"
+        squares[i] = "X"
     else:
-        squaresB[i] = "O"
-    return squaresB
+        squares[i] = "O"
+    return squares

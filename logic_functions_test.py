@@ -22,7 +22,7 @@ def test_calculate_winner_O():
 
 
 def test_get_next_board():
-    actual = get_next_board([None, None, None, "X", None, None, None, None, None], 3, "X")
-    expected = "O"
+    actual = get_next_board(["X", None, None, None, None, None, None, None, None], 3, "X")
+    expected = ["X", None, None, "O", None, None, None, None, None]
 
     assert actual == expected, f"Returned {actual} instead of {expected}"

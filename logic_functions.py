@@ -17,8 +17,7 @@ def calculate_winner(squares):
 
 
 def get_fresh_board():
-   return [None for _ in range(9)]
-
+    return [None for _ in range(9)]
 
 
 def get_next_board(squares, i, x_is_next):

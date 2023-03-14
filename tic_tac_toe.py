@@ -8,25 +8,21 @@ app = Flask(__name__)
 cors = CORS(app)
 
 
-@app.route("/hello/")
-def hello_world():
-    return "<p>Hello, World!</p>"
-
-@app.route("/bye/")
-def bye_world():
-    return "<p>Bye, World!</p>"
-
 @app.route("/winner/", methods=["POST"])
 def winner():
     data = request.json
-    return {"winner": calculate_winner(data["squares"]),}
+    return {
+        "winner": calculate_winner(data["squares"]),
+    }
+
 
 @app.route("/board/", methods=["GET", "POST"])
 def board():
     if request.method == "POST":
         data = request.json
-        return {"squares": get_next_board(data["squares"], data["i"], data["x_is_next"])}
+        return {
+            "squares": get_next_board(data["squares"], data["i"], data["x_is_next"])
+        }
 
     elif request.method == "GET":
         return {"squares": get_fresh_board()}
-    

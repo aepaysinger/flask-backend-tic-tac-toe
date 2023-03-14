@@ -1,4 +1,4 @@
-from logic_functions import get_fresh_board, calculate_winner, get_next_board
+from logic_functions import calculate_winner, get_fresh_board, get_next_board
 
 
 def test_get_fresh_board():

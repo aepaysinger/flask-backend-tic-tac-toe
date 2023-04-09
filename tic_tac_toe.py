@@ -26,3 +26,16 @@ def board():
 
     elif request.method == "GET":
         return {"squares": get_fresh_board()}
+
+
+PLAYER = "X"
+
+
+@app.route("/test", methods=["POST"])
+def proto():
+    global PLAYER
+    data = request.json
+    if PLAYER == data["player"]:
+        PLAYER = "O" if data["player"] == "X" else "X"
+        return "ok", 200
+    return "no good", 400
